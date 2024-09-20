@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Joseph Joe - Portfolio</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
     <style>
         * {
             margin: 0;
@@ -12,15 +16,13 @@
         }
 
         body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
+            font-family: 'Montserrat', sans-serif;
             overflow-x: hidden;
-            background: #f0f0f0;
-            color: #333;
+            scroll-behavior: smooth;
+            background: #141E30; /* Fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #243B55, #141E30);  /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #243B55, #141E30); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            color: #fff;
         }
 
         section {
@@ -32,67 +34,113 @@
             text-align: center;
             flex-direction: column;
             padding: 20px;
+            position: relative;
+            background-size: cover;
+            transition: all 0.5s ease;
         }
 
+        section h1 {
+            font-size: 4em;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        section p {
+            font-size: 1.2em;
+            max-width: 600px;
+            line-height: 1.6;
+            opacity: 0.85;
+        }
+
+        /* Section Backgrounds */
         #about {
-            background: #3498db;
-            color: white;
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            animation: backgroundFade 10s ease-in-out infinite;
         }
 
         #portfolio {
-            background: #2ecc71;
-            color: white;
+            background: linear-gradient(135deg, #ff512f 0%, #dd2476 100%);
+            animation: backgroundFade 10s ease-in-out infinite reverse;
         }
 
         #contact {
-            background: #e74c3c;
-            color: white;
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
         }
 
-        h1 {
-            font-size: 3em;
-            margin-bottom: 20px;
-        }
-
-        p {
-            font-size: 1.2em;
-            max-width: 600px;
-        }
-
+        /* Social Links Styling */
         .social-links {
-            margin-top: 20px;
+            margin-top: 30px;
         }
 
         .social-links a {
             color: white;
             text-decoration: none;
             margin: 0 15px;
-            font-size: 1.5em;
+            font-size: 2em;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            transform: scale(1.2);
+            color: #FFD700;
+        }
+
+        /* Scroll Button (optional) */
+        .scroll-down {
+            position: absolute;
+            bottom: 30px;
+            font-size: 2em;
+            cursor: pointer;
+            color: rgba(255, 255, 255, 0.7);
+            transition: color 0.3s ease;
+        }
+
+        .scroll-down:hover {
+            color: #FFD700;
+        }
+
+        /* Keyframe animations */
+        @keyframes backgroundFade {
+            0% { filter: hue-rotate(0deg); }
+            50% { filter: hue-rotate(180deg); }
+            100% { filter: hue-rotate(360deg); }
         }
 
         /* Make it responsive */
         @media (max-width: 768px) {
             h1 {
-                font-size: 2em;
+                font-size: 2.5em;
             }
 
             p {
                 font-size: 1em;
             }
+
+            .social-links a {
+                font-size: 1.5em;
+            }
+
+            .scroll-down {
+                font-size: 1.5em;
+            }
         }
     </style>
 </head>
 <body>
+
     <!-- About Me Section -->
     <section id="about">
         <h1>Joseph Joe</h1>
         <p>I am an app developer and Python automation enthusiast. I specialize in creating efficient mobile applications and automating workflows to save time and resources.</p>
+        <div class="scroll-down" onclick="document.getElementById('portfolio').scrollIntoView({ behavior: 'smooth' });">↓</div>
     </section>
 
     <!-- Portfolio Section -->
     <section id="portfolio">
         <h1>Portfolio</h1>
         <p>Check out some of my work in app development and automation solutions. I strive to deliver top-notch apps and automate complex tasks using Python.</p>
+        <div class="scroll-down" onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });">↓</div>
     </section>
 
     <!-- Contact Section -->
@@ -100,10 +148,11 @@
         <h1>Contact</h1>
         <p>Feel free to get in touch with me for collaborations or to learn more about my work!</p>
         <div class="social-links">
-            <a href="https://github.com" target="_blank">GitHub</a>
-            <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+            <a href="https://github.com/JoeTinnySpace" target="_blank">GitHub</a>
+            <a href="https://www.linkedin.com/in/josephdennisjoe/" target="_blank">LinkedIn</a>
             <a href="mailto:example@example.com">Email</a>
         </div>
     </section>
+
 </body>
 </html>
