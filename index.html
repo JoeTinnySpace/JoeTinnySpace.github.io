@@ -8,131 +8,15 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Montserrat', sans-serif;
-            overflow-x: hidden;
-            scroll-behavior: smooth;
-            background: #141E30; /* Fallback for old browsers */
-            background: -webkit-linear-gradient(to right, #243B55, #141E30);  /* Chrome 10-25, Safari 5.1-6 */
-            background: linear-gradient(to right, #243B55, #141E30); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-            color: #fff;
-        }
-
-        section {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            width: 100vw;
-            text-align: center;
-            flex-direction: column;
-            padding: 20px;
-            position: relative;
-            background-size: cover;
-            transition: all 0.5s ease;
-        }
-
-        section h1 {
-            font-size: 4em;
-            margin-bottom: 20px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
-
-        section p {
-            font-size: 1.2em;
-            max-width: 600px;
-            line-height: 1.6;
-            opacity: 0.85;
-        }
-
-        /* Section Backgrounds */
-        #about {
-            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
-            animation: backgroundFade 10s ease-in-out infinite;
-        }
-
-        #portfolio {
-            background: linear-gradient(135deg, #ff512f 0%, #dd2476 100%);
-            animation: backgroundFade 10s ease-in-out infinite reverse;
-        }
-
-        #contact {
-            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
-        }
-
-        /* Social Links Styling */
-        .social-links {
-            margin-top: 30px;
-        }
-
-        .social-links a {
-            color: white;
-            text-decoration: none;
-            margin: 0 15px;
-            font-size: 2em;
-            transition: transform 0.3s ease, color 0.3s ease;
-        }
-
-        .social-links a:hover {
-            transform: scale(1.2);
-            color: #FFD700;
-        }
-
-        /* Scroll Button (optional) */
-        .scroll-down {
-            position: absolute;
-            bottom: 30px;
-            font-size: 2em;
-            cursor: pointer;
-            color: rgba(255, 255, 255, 0.7);
-            transition: color 0.3s ease;
-        }
-
-        .scroll-down:hover {
-            color: #FFD700;
-        }
-
-        /* Keyframe animations */
-        @keyframes backgroundFade {
-            0% { filter: hue-rotate(0deg); }
-            50% { filter: hue-rotate(180deg); }
-            100% { filter: hue-rotate(360deg); }
-        }
-
-        /* Make it responsive */
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2.5em;
-            }
-
-            p {
-                font-size: 1em;
-            }
-
-            .social-links a {
-                font-size: 1.5em;
-            }
-
-            .scroll-down {
-                font-size: 1.5em;
-            }
-        }
-    </style>
+    <!-- CSS -->
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
 
     <!-- About Me Section -->
     <section id="about">
         <h1>Joseph Joe</h1>
-        <p>I am an app developer and Python automation enthusiast. I specialize in creating efficient mobile applications and automating workflows to save time and resources.</p>
+        <p>I am an App developer and Python automation enthusiast. I specialize in creating efficient mobile applications and automating workflows to save time and resources.</p>
         <div class="scroll-down" onclick="document.getElementById('portfolio').scrollIntoView({ behavior: 'smooth' });">↓</div>
     </section>
 
@@ -140,17 +24,43 @@
     <section id="portfolio">
         <h1>Portfolio</h1>
         <p>Check out some of my work in app development and automation solutions. I strive to deliver top-notch apps and automate complex tasks using Python.</p>
+        <div class="projects-container">
+            <div class="project-card">
+                <h3>File Streamer Pro Client</h3>
+                <p> Effortlessly receive and stream files from your Mixplorer WebDav server directly to your device. </p>
+                <a href="Projects/File_Streamer_Client/File_streamer_client.html" class="view-project">View Project</a>
+            </div>
+            <div class="project-card">
+                <h3>Fieldx Dialer & Denomination</h3>
+                <p>An app made for Flipkart Customers and employees under delivery hubs.</p>
+                <a href="Projects/Call_Customer&Cash_Denomination/Call_Customer&Cash_Denomination.html" class="view-project">View Project</a>
+            </div>
+            <div class="project-card">
+                <h3>Project Title 3</h3>
+                <p>Describe this project and the impact it has or the problem it solves.</p>
+                <a href="#" class="view-project">View Project</a>
+            </div>
+        </div>
+
         <div class="scroll-down" onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });">↓</div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact">
+    <section id="contact" style="position: relative;">
+        <div class="scroll-up" onclick="document.getElementById('about').scrollIntoView({ behavior: 'smooth' });">^</div> <!-- Changed from scroll-down to scroll-up -->
+        
         <h1>Contact</h1>
         <p>Feel free to get in touch with me for collaborations or to learn more about my work!</p>
+        
         <div class="social-links">
             <a href="https://github.com/JoeTinnySpace" target="_blank">GitHub</a>
             <a href="https://www.linkedin.com/in/josephdennisjoe/" target="_blank">LinkedIn</a>
-            <a href="mailto:example@example.com">Email</a>
+            <a href="mailto:josephdennisjoo71@gmail.com">Email</a>
+        </div>
+    
+        <div class="footer-info">
+            <p>Pure HTML & CSS</p>
+            <p>&copy; 2024</p> <!-- Added copyright symbol for clarity -->
         </div>
     </section>
 
