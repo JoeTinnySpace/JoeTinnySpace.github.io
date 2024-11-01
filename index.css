@@ -1,0 +1,222 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    background: #141E30; /* Fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #243B55, #141E30);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #243B55, #141E30); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: #fff;
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    text-align: center;
+    flex-direction: column;
+    padding: 20px;
+    position: relative;
+    background-size: cover;
+    transition: all 0.5s ease;
+}
+
+section h1 {
+    font-size: 4em;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+section p {
+    font-size: 1.2em;
+    max-width: 600px;
+    line-height: 1.6;
+    opacity: 0.85;
+}
+
+/* Section Backgrounds */
+#about {
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+    animation: backgroundFade 10s ease-in-out infinite;
+}
+
+#portfolio {
+    background: linear-gradient(135deg, #ff512f 0%, #dd2476 100%);
+    animation: backgroundFade 10s ease-in-out infinite reverse;
+}
+
+#contact {
+    background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+}
+
+/* Social Links Styling */
+.social-links {
+    margin-top: 30px;
+}
+
+.social-links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 2em;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-links a:hover {
+    transform: scale(1.2);
+    color: #FFD700;
+}
+
+/* Scroll Button (optional) */
+.scroll-down {
+    position: absolute;
+    bottom: 30px;
+    font-size: 2em;
+    cursor: pointer;
+    color: rgba(255, 255, 255, 0.7);
+    transition: color 0.3s ease;
+}
+
+.scroll-down:hover {
+    color: #FFD700;
+}
+
+#portfolio {
+    background: linear-gradient(135deg, #ff512f 0%, #dd2476 100%);
+    padding: 60px 20px; /* Add padding for a balanced layout */
+    text-align: center;
+    width: 100%;
+    min-height: 100vh;
+}
+
+
+#portfolio h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 1rem;
+}
+
+.project-card {
+    display: flex; /* Use flexbox to arrange children */
+    flex-direction: column; /* Stack children vertically */
+    justify-content: space-between; /* Space out children */
+    align-items: center; /* Center items horizontally */
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%; /* Ensure the card takes full height */
+}
+
+.project-card h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.project-card p {
+    font-size: 1em;
+    color: #666;
+    margin-bottom: 20px;
+    flex-grow: 1; /* Allow this element to grow and take up available space */
+}
+
+.project-card .view-project {
+    display: inline-block;
+    padding: 10px 20px;
+    color: #fff;
+    background-color: #007bff;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    margin-top: 10px; /* Add a top margin for spacing */
+}
+
+.project-card .view-project:hover {
+    background-color: #0056b3;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.footer-info {
+    position: absolute;
+    bottom: 20px; /* Distance from the bottom of the section */
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    opacity: 0.85; /* Optional styling for a lighter appearance */
+}
+
+.footer-info p {
+    margin: 0;
+}
+
+.scroll-up {
+    position: absolute;
+    top: 30px; /* Position it above the section */
+    /* left: 50%; */
+    transform: translateX(-50%); /* Center horizontally */
+    font-size: 1.5em; /* Adjust size as needed */
+    cursor: pointer;
+    color: rgba(255, 255, 255, 0.7);
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.scroll-up:hover {
+    color: #FFD700; /* Change color on hover */
+    /* transform: scale(1.2);  */
+}
+
+
+
+
+
+/* Keyframe animations */
+@keyframes backgroundFade {
+    0% { filter: hue-rotate(0deg); }
+    50% { filter: hue-rotate(180deg); }
+    100% { filter: hue-rotate(360deg); }
+}
+
+/* Make it responsive */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5em;
+    }
+
+    p {
+        font-size: 1em;
+    }
+
+    .social-links a {
+        font-size: 1.5em;
+    }
+
+    .scroll-down {
+        font-size: 1.5em;
+    }
+}
+

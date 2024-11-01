@@ -1,0 +1,99 @@
+<!-- https://www.amazon.in/Brandez-File-Streamer-Pro-Client/dp/B0DJC7S8X5 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="project-title"></title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="project.css">
+</head>
+<body>
+    <!-- Project Details Section -->
+    <div class="home-button">
+        <a href="../../index.html">Home</a> <!-- Update this link to your actual home page file -->
+    </div>
+    <section class="project-details">
+        <div class="project-header">
+            <h1 id="project-name"></h1>
+            <p class="project-subtitle" id="project-subtitle"></p>
+        </div>
+
+        <div class="project-content">
+            <img id="project-image-1" class="project-image" alt="Screenshot of Project Title">
+            <img id="project-image-2" class="project-image" alt="Screenshot of Project Title">
+            
+            <div class="project-description">
+                <h2>About the Project</h2>
+                <p id="project-about"></p>
+
+                <h3>Key Features</h3>
+                <ul id="key-features-list"></ul>
+
+                <h3>Technologies Used</h3>
+                <ul class="tech-list" id="tech-list"></ul>
+            </div>
+        </div>
+
+        <div class="project-links">
+            <a id="github-link" href="#" target="_blank" class="project-link disabled" data-tooltip="Private Repo">GitHub Repository</a>
+            <a id="live-demo-link" href="#" target="_blank" class="project-link">Live Demo</a>
+        </div>
+    </section>
+
+    <script>
+        // Project Variables
+        const projectDetails = {
+            title: "File Streamer Pro Client | Joseph Joe Portfolio",
+            name: "File Streamer Pro Client (Android App)",
+            subtitle: "File Streamer Pro Client is a powerful companion app for Mixplorer WebDav server users. Effortlessly receive and stream files from your Mixplorer WebDav server directly to your device. Navigate directories, stream videos, and access media with an intuitive interface designed for fast and reliable performance. Ideal for streaming content without the need for manual downloads, File Streamer Pro Client enhances your file management experience with simple yet powerful tools. Perfect for home media setups and file sharing across devices.",
+            image1: "sc_file_streamer_client.png",
+            image2: "sc_file_streamer_client_1.png",
+            about: "This project focuses on solving Home Network File Transfering issues using WebDav Protocol. It was designed to easily access and play movies or videos from Mobile devices to Android TV. But the use cases are endless.",
+            keyFeatures: [
+                "Quick File Access.",
+                "Custom Server Address.",
+                "Responsive User Interface.",
+                "Directory Navigation."
+            ],
+            techUsed: [
+                "JetPack Compose Android",
+                "Kotlin",
+                "Ktor Client"
+            ],
+            githubLink: "https://github.com/JoeTinnySpace/File-Streamer-Pro-Client",
+            liveDemoLink: "https://www.amazon.in/Brandez-File-Streamer-Pro-Client/dp/B0DJC7S8X5"
+        };
+
+        // Populate the HTML with project details
+        document.getElementById("project-title").textContent = projectDetails.title;
+        document.getElementById("project-name").textContent = projectDetails.name;
+        document.getElementById("project-subtitle").textContent = projectDetails.subtitle;
+        document.getElementById("project-image-1").src = projectDetails.image1;
+        document.getElementById("project-image-2").src = projectDetails.image2;
+        document.getElementById("project-about").textContent = projectDetails.about;
+
+        // Populate Key Features
+        const keyFeaturesList = document.getElementById("key-features-list");
+        projectDetails.keyFeatures.forEach(feature => {
+            const li = document.createElement("li");
+            li.textContent = feature;
+            keyFeaturesList.appendChild(li);
+        });
+
+        // Populate Technologies Used
+        const techList = document.getElementById("tech-list");
+        projectDetails.techUsed.forEach(tech => {
+            const li = document.createElement("li");
+            li.textContent = tech;
+            techList.appendChild(li);
+        });
+
+        // Set Links
+        document.getElementById("github-link").href = projectDetails.githubLink;
+        document.getElementById("live-demo-link").href = projectDetails.liveDemoLink;
+
+    </script>
+</body>
+</html>
