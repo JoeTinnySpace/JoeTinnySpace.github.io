@@ -1,0 +1,103 @@
+<!-- https://www.amazon.in/Brandez-File-Streamer-Pro-Client/dp/B0DJC7S8X5 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="project-title"></title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="project.css">
+</head>
+<body>
+    <!-- Project Details Section -->
+    <div class="home-button">
+        <a href="../../index.html">Home</a> <!-- Update this link to your actual home page file -->
+    </div>
+    <section class="project-details">
+        <div class="project-header">
+            <h1 id="project-name"></h1>
+            <p class="project-subtitle" id="project-subtitle"></p>
+        </div>
+
+        <div class="project-content">
+            <img id="project-image-1" class="project-image" alt="Screenshot of Project Title">
+            <img id="project-image-2" class="project-image" alt="Screenshot of Project Title">
+            <img id="project-image-3" class="project-image" alt="Screenshot of Project Title">
+            
+            <div class="project-description">
+                <h2>About the Project</h2>
+                <p id="project-about"></p>
+
+                <h3>Key Features</h3>
+                <ul id="key-features-list"></ul>
+
+                <h3>Technologies Used</h3>
+                <ul class="tech-list" id="tech-list"></ul>
+            </div>
+        </div>
+
+        <div class="project-links">
+            <a id="github-link" href="#" target="_blank" class="project-link disabled" data-tooltip="Private Repo">GitHub Repository</a>
+            <!-- <a id="live-demo-link" href="" target="_blank" class="project-link">Closed Testing</a> -->
+        </div>
+    </section>
+
+    <script>
+        // Project Variables
+        const projectDetails = {
+            title: "Scan To Barcode | Joseph Joe Portfolio",
+            name: "Scan To Barcode (Android App)",
+            subtitle: "Scans and converts text to barcode",
+            image1: "scan_sc1.jpg",
+            image2: "scan_sc2.jpg",
+            image3: "scan_sc3.jpg",
+            about: "An app to scan text or any strings and make individual strings into barcodes. Custom regex patterns can be set to detects only specific strings",
+            keyFeatures: [
+                "Scan and create barcodes",
+                "Custom Pattern Filtering",
+                "Responsive User Interface",
+                "Play Billing"
+            ],
+            techUsed: [
+                "JetPack Compose Android",
+                "Kotlin",
+                "Camera API",
+                "Text Recognition ML"
+            ],
+            githubLink: "https://github.com/JoeTinnySpace/Scan-to-Barcode",
+            liveDemoLink: ""
+        };
+
+        // Populate the HTML with project details
+        document.getElementById("project-title").textContent = projectDetails.title;
+        document.getElementById("project-name").textContent = projectDetails.name;
+        document.getElementById("project-subtitle").textContent = projectDetails.subtitle;
+        document.getElementById("project-image-1").src = projectDetails.image1;
+        document.getElementById("project-image-2").src = projectDetails.image2;
+        document.getElementById("project-image-3").src = projectDetails.image3;
+        document.getElementById("project-about").textContent = projectDetails.about;
+
+        // Populate Key Features
+        const keyFeaturesList = document.getElementById("key-features-list");
+        projectDetails.keyFeatures.forEach(feature => {
+            const li = document.createElement("li");
+            li.textContent = feature;
+            keyFeaturesList.appendChild(li);
+        });
+
+        // Populate Technologies Used
+        const techList = document.getElementById("tech-list");
+        projectDetails.techUsed.forEach(tech => {
+            const li = document.createElement("li");
+            li.textContent = tech;
+            techList.appendChild(li);
+        });
+
+        // Set Links
+        document.getElementById("github-link").href = projectDetails.githubLink;
+        document.getElementById("live-demo-link").href = projectDetails.liveDemoLink;
+
+    </script>
+</body>
+</html>
