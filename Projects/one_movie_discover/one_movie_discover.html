@@ -1,4 +1,4 @@
-<!--  -->
+<!-- https://www.amazon.in/Brandez-File-Streamer-Pro-Client/dp/B0DJC7S8X5 -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -14,7 +14,6 @@
     <div class="home-button">
         <a href="../../index.html">Home</a> <!-- Update this link to your actual home page file -->
     </div>
-
     <section class="project-details">
         <div class="project-header">
             <h1 id="project-name"></h1>
@@ -22,8 +21,9 @@
         </div>
 
         <div class="project-content">
-            <img id="project-image-1" class="project-image" alt="Screenshot of Project Title">
-            <img id="project-image-2" class="project-image" alt="Screenshot of Project Title">
+            <img id="project-image-1" class="project-image" alt="Screenshot of Project">
+            <img id="project-image-2" class="project-image" alt="Screenshot of Project ">
+            <img id="project-image-3" class="project-image" alt="Screenshot of Project ">
             
             <div class="project-description">
                 <h2>About the Project</h2>
@@ -39,32 +39,35 @@
 
         <div class="project-links">
             <a id="github-link" href="#" target="_blank" class="project-link disabled" data-tooltip="Private Repo">GitHub Repository</a>
-            <a id="live-demo-link" href="#" target="_blank" class="project-link">Live Demo</a>
+            <a id="live-demo-link" href="" target="_blank" class="project-link">Live URL</a>
         </div>
     </section>
 
     <script>
         // Project Variables
         const projectDetails = {
-            title: "Fieldx Dialer & Denomination | Joseph Joe Portfolio",
-            name: "Fieldx Dialer & Denomination (Android App)",
-            subtitle: "An app built for custom number dialing, using Default Dialer App",
-            image1: "fieldx_sc1.jpg",
-            image2: "fieldx_sc3.jpg",
-            about: "",
+            title: "One Movie Discover | Joseph Joe Portfolio",
+            name: "One Movie Discover (Web App)",
+            subtitle: "Discover movies ...., just like that !",
+            image1: "movie_sc1.png",
+            image2: "movie_sc2.png",
+            image3: "movie_sc3.png",
+            about: "An app to discover movies using filters and lists. The app features arrow key navigation for the slider. Also uses restful APIs to fetch data from remote servers",
             keyFeatures: [
-                "Cash Denomination Calculator",
-                "Automatic ext dialing.",
-                "Responsive User Interface."
+                "Search movies by name",
+                "Filter and slide through lists",
+                "Add to personal list",
+                "Editor's pick",
+                "Live instant feedbacks"
             ],
             techUsed: [
-                "JetPack Compose Android",
-                "Kotlin",
-                "Material3 Library",
-                "Responsive UI"
+                "React JS",
+                "Tailwind CSS",
+                "Telegram API for feedbacks",
+                "TMDB and OMDB API for movie data"
             ],
-            githubLink: "https://github.com/JoeTinnySpace/FieldX-Call-Customer-App",
-            liveDemoLink: "https://play.google.com/store/apps/details?id=com.brandez.fieldxcallcustomer"
+            githubLink: "https://github.com/JoeTinnySpace/onemovie.io",
+            liveDemoLink: "https://one-movie-discover.vercel.app/"
         };
 
         // Populate the HTML with project details
@@ -73,6 +76,7 @@
         document.getElementById("project-subtitle").textContent = projectDetails.subtitle;
         document.getElementById("project-image-1").src = projectDetails.image1;
         document.getElementById("project-image-2").src = projectDetails.image2;
+        document.getElementById("project-image-3").src = projectDetails.image3;
         document.getElementById("project-about").textContent = projectDetails.about;
 
         // Populate Key Features

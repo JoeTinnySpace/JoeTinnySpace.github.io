@@ -15,10 +15,15 @@
 
     <!-- About Me Section -->
     <section id="about">
-        <h1>Joseph Dennis</h1>
-        <p>I am an App developer and Python automation enthusiast. I specialize in creating efficient mobile applications and automating workflows to save time and resources.</p>
+        <div class="about-background"></div> <!-- Placeholder background image -->
+        <div class="about-container">
+            <h1>Hi, I'm Joseph</h1>
+            <p>Android/ Web App Developer && Python Automation Enthusiast.</p>
+            
+        </div>
         <div class="scroll-down" onclick="document.getElementById('portfolio').scrollIntoView({ behavior: 'smooth' });">↓</div>
     </section>
+    
 
     <!-- Portfolio Section -->
     <section id="portfolio">
@@ -40,6 +45,12 @@
                 <p>An android app to scan using device camera and create barcode from the detected strings.</p>
                 <a href="Projects/Scan_to_Barcode/scan_to_barcode.html" class="view-project">View Project</a>
             </div>
+            <div class="project-card">
+                <h3>One Movie Discover </h3>
+                <p>A react webapp to discover movies by search and movie lists.</p>
+                <a href="Projects/one_movie_discover/one_movie_discover.html" class="view-project">View Project</a>
+            </div>
+            
         </div>
 
         <div class="scroll-down" onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });">↓</div>
@@ -64,5 +75,20 @@
         </div>
     </section>
 
+    <script>
+        
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Event listener for keypresses
+        window.addEventListener('keydown', function(event) {
+            if (event.key === 'ArrowDown') {
+                scrollToSection('contact'); // Change to the next section ID you want to scroll to
+            } else if (event.key === 'ArrowUp') {
+                scrollToSection('about'); // Change to the previous section ID you want to scroll to
+            }
+        });
+    </script>
 </body>
 </html>
